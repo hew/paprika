@@ -1,0 +1,38 @@
+// ActionTypes:
+const OPEN_NAV_MODAL = 'OPEN_NAV_MODAL'
+const CLOSE_NAV_MODAL = 'CLOSE_NAV_MODAL'
+
+// Actions:
+export const openNavModal = listId => ({
+  type: OPEN_NAV_MODAL,
+  payload: {
+    show: true,
+    list: listId
+  }
+})
+
+export const closeNavModal = () => ({
+  type: CLOSE_NAV_MODAL,
+  payload: {
+    show: false
+  }
+})
+
+// Set InitialState
+export const initialNavModalState = {
+  navModal: {
+    show: false
+  }
+}
+
+// Reducer
+export const navModalReducer = (state = initialNavModalState, action) => {
+  switch (action.type) {
+    case OPEN_NAV_MODAL:
+      return { ...state, navModal: action.payload }
+    case CLOSE_NAV_MODAL:
+      return { ...state, navModal: action.payload }
+    default:
+      return state
+  }
+}

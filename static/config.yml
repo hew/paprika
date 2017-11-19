@@ -1,0 +1,38 @@
+backend:
+  name: github
+  repo: hew/klue-site # Path to your Github repository
+  branch: master # Branch to update
+
+media_folder: "src/img/blog"
+public_folder: "/media"
+publish_mode: editorial_workflow
+
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "src/pages/blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Categories", name: "categories", widget: "categories" }
+      - {label: "Cover Image", name: "cover", widget: "cover" }
+
+  - name: "site"
+    label: "Site Data" 
+    folder: "src/data"
+    create: true, 
+    slug: "site" 
+    fields:
+      - {label: Title, name: title, widget: string, tagname: h1}
+      - name: lists
+        label: Mailing Lists
+        widget: object
+        fields:
+          - {label: Product Markter's eBook, name: ebook, widget: string}
+          - {label: Win/Loss Checklist, name: checklist, widget: string}
+

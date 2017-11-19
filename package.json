@@ -1,0 +1,62 @@
+{
+  "name": "klue-website",
+  "description": "Marketing Website for Klue.com",
+  "version": "1.0.0",
+  "author": "Matt Jones <matt@klue.com>",
+  "private": "true",
+  "dependencies": {
+    "css-wipe": "^4.3.0",
+    "gatsby": "^1.9.76",
+    "gatsby-link": "^1.6.8",
+    "gatsby-plugin-google-analytics": "^1.0.4",
+    "gatsby-plugin-manifest": "^1.0.4",
+    "gatsby-plugin-netlify": "^1.0.4",
+    "gatsby-plugin-offline": "^1.0.4",
+    "gatsby-plugin-preact": "^1.0.3",
+    "gatsby-plugin-react-helmet": "^1.0.3",
+    "gatsby-plugin-sharp": "^1.6.2",
+    "gatsby-remark-images": "^1.5.4",
+    "gatsby-remark-prismjs": "^1.2.1",
+    "gatsby-remark-responsive-iframe": "^1.4.3",
+    "gatsby-remark-smartypants": "^1.4.3",
+    "gatsby-source-filesystem": "^1.4.3",
+    "gatsby-transformer-remark": "^1.7.1",
+    "gatsby-transformer-sharp": "^1.6.1",
+    "isemail": "^3.0.0",
+    "joi-browser": "^10.6.1",
+    "lodash": "^4.15.0",
+    "react-css-grid": "^2.0.0-0",
+    "react-enhanced-form": "^1.4.5",
+    "react-geomicons": "^2.1.0",
+    "react-modal": "^2.3.2",
+    "react-redux": "^5.0.6",
+    "redux-modal": "^1.5.3",
+    "reset-css": "^2.2.1",
+    "styled-reset": "^0.1.2",
+    "styled-system": "^1.0.8"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.2.0",
+    "gh-pages": "^0.12.0"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+  },
+  "scripts": {
+    "dev": "gatsby develop",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+  }
+}
