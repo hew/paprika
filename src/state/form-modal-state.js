@@ -21,19 +21,17 @@ export const closeFormModal = () => ({
 
 // Set InitialState
 export const initialFormModalState = {
-  formModal: {
-    show: false,
-    list: ''
-  }
+  show: false,
+  list: null
 }
 
 // Reducer
 export const formModalReducer = (state = initialFormModalState, action) => {
   switch (action.type) {
     case OPEN_FORM_MODAL:
-      return { ...state, formModal: action.payload }
+      return { state, ...action.payload }
     case CLOSE_FORM_MODAL:
-      return { ...state, formModal: action.payload }
+      return { state, ...action.payload }
     default:
       return state
   }

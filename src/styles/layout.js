@@ -9,7 +9,6 @@ import {
   alignItems, justifyContent, 
   borderWidth, borderColor,
   removeProps,
-  cleanElement,
   responsiveStyle
 } from 'styled-system'
 
@@ -20,7 +19,7 @@ const BaseComponent = props => {
   const next = removeProps(props)
 
   // Remove valid(?) props
-  // TODO: This is getting a little messy
+  // TODO: This is getting a little messy but `cleanElement` isn't working...
   delete next.is
   delete next.display
   delete next.width

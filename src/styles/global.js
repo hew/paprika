@@ -30,12 +30,16 @@ injectGlobal`
   ul, li {
     margin: 0;
   }
+  ul {
+    padding-left: 1em;
+  }
   li {
     display: block;
   }
   a {
     text-decoration: none;
     color: ${color.gray[0]};
+    border-bottom: 3px solid ${color.offWhite[0]};
   }
   img {
     width: 100%;
@@ -44,7 +48,14 @@ injectGlobal`
   p {
     font-size: 17px;
   }
-  .features a {
-    border-bottom: 2px solid ${color.gray[0]};
+  mark {
+    background-color: ${color.offWhite[0]};
+    color: #000;
+    font-family: monospace;
+    padding: 0.25em;
+  }
+  hr {
+    margin: 1.5em 0;
+    opacity: 0.5;
   }
 `

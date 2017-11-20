@@ -41,17 +41,18 @@ class FormModal extends React.Component {
           </Pointer>
         </Flex>
         <H1 mb={2}>
-          Your data, if you would be so kind.
+          Netlify static form submission. It's awesome.
         </H1>
         <Flex wrap justify="center" py={3}>
-          <Box width={[1, 1, 1, 1/2]} p={1}>
+          <Box width={[1, 1, 1/2]} p={1}>
             <H4 mb={2}>Email</H4>
-            <P mr={[0,0,0,2]}>
-              Standard accompanying CTA text talking about value and shit.
+            <P mr={[0, 0, 2]}>
+              Throw in soome client-side form validation 😈 and you are good to go.
+              Use the Netlify UI to connect each form to <a href="https://ifttt.com/">IFTTT</a>, <a href="https://zapier.com/">Zapier</a>, etc.
             </P>
           </Box>
-          <Box width={[1, 1, 1, 1/2]} p={1}>
-            <H4 mb={2}>More CTA</H4>
+          <Box width={[1, 1, 1/2]} p={1}>
+            <H4 mb={2}>Give it a shot.</H4>
             <Form listId={list} />
           </Box>
         </Flex>

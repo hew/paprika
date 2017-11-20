@@ -20,7 +20,7 @@ const modalStyles = {
     alignItems: 'center',
     top: '40px',
     left: '30px',
-    right: '50px',
+    right: '40px',
     bottom: '40px',
     border: 'none',
     background: 'transparent',
@@ -51,10 +51,6 @@ class NavModal extends React.Component {
               </Link>
             </li>
           ))}
-          <hr />
-          <a href="https://app.klue.com/">
-            <strong>Login / Signup</strong>
-          </a>
         </ul>
       </Modal>
     )

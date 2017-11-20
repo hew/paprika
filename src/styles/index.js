@@ -1,6 +1,6 @@
 import { Row, Flex, Box, Container } from './layout'
 import { max_width, sm_screen, md_screen, lg_screen } from './sizes'
-import { H1, H2, H3, H4, P, Span, Ul, Li } from './type'
+import { H1, H2, H3, H4, P, Span } from './type'
 import color from './color'
 import './global'
 
@@ -29,5 +29,3 @@ global.H3 = H3
 global.H4 = H4
 global.Span = Span
 global.P = P
-global.Ul = Ul
-global.Li = Li

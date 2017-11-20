@@ -20,16 +20,16 @@ const Button = styled.button`
   line-height: 40px;
   border: 2px solid transparent;
   transition: all 260ms ease-in-out;
-  background-color: ${props => props.bgColor || color.green[1]};
-  background: ${props => props.bgColor || color.green[1]};
+  background-color: ${props => props.bgColor || color.red[0]};
+  background: ${props => props.bgColor || color.red[0]};
   border-color: ${props => props.borderColor || 'transparent'};
-  color: ${props => props.color || color.green[3]};
+  color: ${props => props.color || 'white'};
 
   :hover {
     outline: 0;
     color: ${props => props.hoverColor || color.white};
-    background-color: ${props => props.hoverBgColor || color.green[1]};
-    border-color: ${props => props.hoverBorderColor || color.green[1]};
+    background-color: ${props => props.hoverBgColor || color.red[0]};
+    border-color: ${props => props.hoverBorderColor || color.red[0]};
   }
 
   :focus {
@@ -38,12 +38,6 @@ const Button = styled.button`
 `
 
 export default Button
-
-export const Alert = ({ children }) => (
-  <Button bgColor={color.red[1]} hoverBgColor={color.red[0]} hoverBorderColor={color.red[0]}>
-    {children}
-  </Button>
-)
 
 export const Secondary = ({ children }) => (
   <Button 

@@ -20,18 +20,16 @@ export const closeNavModal = () => ({
 
 // Set InitialState
 export const initialNavModalState = {
-  navModal: {
-    show: false
-  }
+  show: false
 }
 
 // Reducer
 export const navModalReducer = (state = initialNavModalState, action) => {
   switch (action.type) {
     case OPEN_NAV_MODAL:
-      return { ...state, navModal: action.payload }
+      return { state, ...action.payload }
     case CLOSE_NAV_MODAL:
-      return { ...state, navModal: action.payload }
+      return { state, ...action.payload }
     default:
       return state
   }

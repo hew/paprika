@@ -1,8 +1,11 @@
 import React from 'react'
 import Input from 'react-enhanced-form'
+import { navigateTo } from 'gatsby-link'
 import Joi from 'joi-browser'
 import Button from './button'
 import { nameSchema, emailSchema, encode } from '../utils/helpers'
+import { closeFormModal } from '../state/form-modal-state.js'
+import { connect } from 'react-redux'
 import '../styles'
 
 const stylized = {
@@ -27,19 +30,19 @@ const style = {
 class Form extends React.Component {
 
   state = {
-    submitError: false
+    submitError: null
   }
 
   validateName = e => {
     const result = Joi.validate({ name: e }, nameSchema)
 
-    return result.error ? false : true
+    return !result.error
   }
 
   validateEmail = e => {
     const result = Joi.validate({ email: e }, emailSchema)
 
-    return result.error ? false : true
+    return !result.error
   }
 
   handleSubmit = e => {
@@ -51,18 +54,22 @@ class Form extends React.Component {
     const email = this.inputEmail.input.defaultValue
     const name = this.inputName.input.defaultValue
 
-    if (validEmail && validName) {
+    if (!validEmail && !validName) {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({ 'form-name': this.props.listId, name: name, email: email })
       })
-        .then(() => browserHistory.push('/'))
-        .catch(error => console.error('Form submission error:', error))
+        .then(() => { 
+          console.log('[Paprika] Form submission success')
+          this.props.closeFormModal()
+          navigateTo('/success')
+        })
+        .catch(error => { console.error('[Paprika] Form submission error:', error); this.handleNetworkError() })
     }
 
     else {
-      this.handleSubmitError()
+      this.handleFormError()
     }
   }
 
@@ -72,11 +79,17 @@ class Form extends React.Component {
     }
   }
 
-  handleSubmitError = e => {
-    this.setState({ submitError: true })
+  handleFormError = e => {
+    this.setState({ submitError: 'There was an error with your name/email.' })
+  }
+
+  handleNetworkError = e => {
+    this.setState({ submitError: 'There was a network error.' })
   }
 
   render() {
+    const { submitError } = this.state
+
     return (
       <form
         ref={f => (this.form = f)}
@@ -110,11 +123,17 @@ class Form extends React.Component {
         <Button w={1} mt={2} onClick={this.handleSubmit}>
           Submit
         </Button>
-        { this.state.submitError && <P mt={2} align="center"><Mark>Please fill out all fields</Mark></P> }
+        {submitError && 
+          <P mt={2} align="center">
+            <mark>{submitError}</mark>
+          </P>}
       </form>
     )
   }
 
 }
 
-export default Form
+export default connect(
+  store => ({}),
+  dispatch => ({ closeFormModal: () => dispatch(closeFormModal()) })
+)(Form);
