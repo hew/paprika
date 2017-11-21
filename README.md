@@ -1,7 +1,5 @@
 <p align="center"> <img src="https://user-images.githubusercontent.com/3103241/33089417-63897496-cea5-11e7-8d35-2b5c414944eb.png"/> </p>
 
-# Paprika
-
 A Netlify-hosted Gatsby starter for people who <del>love</del> need forms but hate servers.
 
 ## Why:
