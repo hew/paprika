@@ -3,7 +3,15 @@ import React from 'react'
 const Home = () => (
   <Container>
     <H1>Paprika</H1>
-    <p>A Gatsby starter.</p> 
+    <p>A Gatsby starter for people who love forms but hate servers.</p> 
+
+    <H2>Why:</H2>
+    <ul className="features">
+      <li><Box py={1}>☑️ &nbsp; You want a page/website with a form</Box></li>
+      <li><Box py={1}>☑️ &nbsp; You want that page/website to be static</Box></li>
+      <li><Box py={1}>☑️ &nbsp; You want to use React/Redux</Box></li>
+      <li><Box py={1}>☑️ &nbsp; You want to use, but not configure or worry about React Router or Webpack.</Box></li>
+    </ul>
 
     <H2>Features:</H2>
     <ul className="features">
@@ -34,6 +42,7 @@ const Home = () => (
         <Box py={1}>☑️ &nbsp; Portals! (mobile nav, modal)</Box>
       </li>
     </ul>
+
   </Container>
 )
 
