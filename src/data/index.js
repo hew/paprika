@@ -1,7 +1,8 @@
 export default {
   siteTitle: 'Paprika',
   headerLinks: [
-    { text: 'More', link: '/more' },
-    // More...
+    { text: 'Home', link: '/' },
+    { text: 'More', link: '/more' }
+    // More pages...
   ]
 }

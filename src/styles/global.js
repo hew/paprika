@@ -21,6 +21,7 @@ injectGlobal`
       "Helvetica Neue",
       "Arial",
       sans-serif;
+      line-height: 1.3;
   }
   html, body, #___gatsby, #___gatsby > div {
     height: 100%;
