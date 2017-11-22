@@ -57,7 +57,7 @@ class Nav extends Component {
               ))}
               <li>
                 <a href="#" onClick={this.toggleFormModal} style={noBorder}>
-                  <Button ml={1}>Modal</Button>
+                  <Button ml={1}>Form/Modal</Button>
                 </a>
               </li>
             </Row>

@@ -2,6 +2,8 @@
 
 A Netlify-hosted Gatsby starter for people who <del>love</del> need forms but hate servers.
 
+Demo: https://goofy-swanson-215279.netlify.com/
+
 ## Why:
 
 * You need a page/website with a form
