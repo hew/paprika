@@ -3,11 +3,10 @@ const OPEN_NAV_MODAL = 'OPEN_NAV_MODAL'
 const CLOSE_NAV_MODAL = 'CLOSE_NAV_MODAL'
 
 // Actions:
-export const openNavModal = listId => ({
+export const openNavModal = () => ({
   type: OPEN_NAV_MODAL,
   payload: {
-    show: true,
-    list: listId
+    show: true
   }
 })
 

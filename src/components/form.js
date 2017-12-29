@@ -58,7 +58,7 @@ class Form extends React.Component {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': this.props.listId, name: name, email: email })
+        body: encode({ 'form-name': this.props.formId, name: name, email: email })
       })
         .then(() => { 
           console.log('[Paprika] Form submission success')

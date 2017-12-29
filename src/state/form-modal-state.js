@@ -3,26 +3,23 @@ const OPEN_FORM_MODAL = 'OPEN_FORM_MODAL'
 const CLOSE_FORM_MODAL = 'CLOSE_FORM_MODAL'
 
 // Actions:
-export const openFormModal = listId => ({
+export const openFormModal = () => ({
   type: OPEN_FORM_MODAL,
   payload: {
-    show: true,
-    list: listId
+    show: true
   }
 })
 
 export const closeFormModal = () => ({
   type: CLOSE_FORM_MODAL,
   payload: {
-    show: false,
-    list: null
+    show: false
   }
 })
 
 // Set InitialState
 export const initialFormModalState = {
-  show: false,
-  list: 'form-resource'
+  show: false
 }
 
 // Reducer

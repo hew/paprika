@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import Form from '../components/form';
 import styled from 'styled-components';
 import Icon from 'react-geomicons';
-// import { Flex, Box } from '../styles/layout'
+import {formId} from '../data';
 import {connect} from 'react-redux';
 import {closeFormModal, openFormModal} from '../state/form-modal-state.js';
 
@@ -29,7 +29,7 @@ const Pointer = styled.div`
 
 class FormModal extends React.Component {
   render() {
-    const {open = false, openFormModal, closeFormModal, list} = this.props;
+    const {open = false, openFormModal, closeFormModal} = this.props;
 
     return (
       <Modal isOpen={open} contentLabel="Modal" style={styles}>
@@ -53,7 +53,7 @@ class FormModal extends React.Component {
           </Box>
           <Box width={[1, 1, 1/2]} p={1}>
             <H4 mb={2}>Give it a shot.</H4>
-            <Form listId={list} />
+            <Form formId={formId} />
           </Box>
         </Flex>
       </Modal>
@@ -62,7 +62,7 @@ class FormModal extends React.Component {
 }
 
 export default connect(
-  store => ({modal: store.formModal}),
+  store => ({modal: store.formModal, }),
   dispatch => ({
     openFormModal: () => dispatch(openFormModal()),
     closeFormModal: () => dispatch(closeFormModal())
