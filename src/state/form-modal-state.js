@@ -22,7 +22,7 @@ export const closeFormModal = () => ({
 // Set InitialState
 export const initialFormModalState = {
   show: false,
-  list: null
+  list: 'form-resource'
 }
 
 // Reducer
